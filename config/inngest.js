@@ -28,14 +28,13 @@ async ({event}) => {
 
         email: email_addresses .email_address,
 
-        name: first_name + + last_name, 1
+        name: first_name +' ' + last_name,
 
         imageUrl:image_url
 
     } 
     await connectDB()
     await User.create(userData)
-
 }
 
 )
@@ -55,12 +54,13 @@ export const syncUserUpdation = inngest.createFunction(
 
         email: email_addresses .email_address,
 
-        name: first_name + + last_name, 1
+        name: first_name +' '+ last_name,
 
         imageUrl: image_url
     }
     await connectDB()
     await User.findByIdAndUpdate(id, userData)
+    }
 )
 
 //inngest function to delete user form database
